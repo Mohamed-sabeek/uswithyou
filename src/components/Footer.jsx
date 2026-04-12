@@ -1,10 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Instagram, Twitter, Linkedin, Github, Mail } from 'lucide-react'
+import { Instagram, Linkedin, Github, Mail } from 'lucide-react'
 
 const socialLinks = [
-  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/uswithyou_/' },
-  { name: 'Twitter', icon: Twitter, href: '' },
+  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/_uswithyou_?igsh=MXVncTloYmI0aG52aw==' },
   { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/mohamed-sabeek-1a272a327/' },
   { name: 'GitHub', icon: Github, href: 'https://github.com/Mohamed-sabeek' },
 ]
