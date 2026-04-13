@@ -11,10 +11,10 @@ export default function Contact() {
     e.preventDefault()
     setFormState('submitting')
 
-    // Using environment variables for secure hosting on Vercel
-    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
-    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    // Replace these with your actual EmailJS credentials
+    const SERVICE_ID = 'YOUR_SERVICE_ID'
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
       .then((result) => {
@@ -55,7 +55,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Email Us</h4>
-                  <p className="text-brown-300">uswithyou.team@gmail.com</p>
+                  <p className="text-brown-300">safeeofficial1730@gmail.com</p>
                 </div>
               </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Office</h4>
-                  <p className="text-brown-300">Based in Coimbatore, India<br />Operating Globally</p>
+                  <p className="text-brown-300">Remote / Global</p>
                 </div>
               </div>
             </div>

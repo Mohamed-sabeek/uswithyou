@@ -7,23 +7,23 @@ import member3 from '../assets/member3.jpeg'
 
 const TEAM_DATA = [
   {
-    name: 'Mohamed Sabeek H',
-    role: 'Full Stack Developer & UI/UX Designer',
-    description: 'Develops complete end-to-end web applications, handling frontend, backend, and designing clean, responsive, and user-friendly interfaces.',
-    image: member2,
-    socials: { linkedin: 'https://www.linkedin.com/in/mohamed-sabeek-1a272a327/', github: 'https://github.com/Mohamed-sabeek' },
-  },
-  {
     name: 'Mohamed Asif I',
-    role: 'Business Development & Client Manager',
-    description: 'Handles client acquisition, communication, and requirement analysis. Ensures smooth coordination between clients and the development team.',
+    role: 'Full Stack Developer',
+    description: 'Specialized in building scalable web applications using modern technologies like React, Node.js, and MongoDB.',
     image: member1,
     socials: { linkedin: 'https://www.linkedin.com/in/mohamed-asif-i-a7b401311/', github: 'https://github.com/MOHAMEDASIF2007' },
   },
   {
+    name: 'Mohamed Sabeek H',
+    role: 'Frontend Developer / UI Designer',
+    description: 'Focused on creating clean, responsive, and user-friendly interfaces with modern UI/UX principles.',
+    image: member2,
+    socials: { linkedin: 'https://www.linkedin.com/in/mohamed-sabeek-1a272a327/', github: 'https://github.com/Mohamed-sabeek' },
+  },
+  {
     name: 'Deva S',
-    role: 'Game Developer & Software Engineer',
-    description: 'Works on game development and interactive features while supporting application development with creative and technical solutions.',
+    role: 'Backend Developer / AI Engineer',
+    description: 'Experienced in backend systems, APIs, and AI-based solutions to deliver powerful and efficient applications.',
     image: member3,
     socials: { linkedin: 'https://www.linkedin.com/in/deva-s-1657a5343', github: 'https://github.com/s-deva20' },
   },
