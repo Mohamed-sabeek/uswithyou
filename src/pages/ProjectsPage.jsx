@@ -16,21 +16,21 @@ export default function ProjectsPage() {
     : PROJECTS_DATA.filter(p => p.category === activeCategory)
 
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-brown-300 hover:text-gold transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-gray-500 dark:text-brown-300 hover:text-gold transition-colors mb-8 group font-medium"
           >
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </Link>
-          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">
+          <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 text-gray-900 dark:text-white">
             Our <span className="text-gold italic">Project</span> Gallery.
           </h1>
-          <p className="text-brown-300 text-xl max-w-2xl leading-relaxed italic">
+          <p className="text-gray-600 dark:text-brown-300 text-xl max-w-2xl leading-relaxed italic">
             A comprehensive collection of digital experiences, structural tools, and creative solutions built with passion and precision.
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
                 className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${
                   activeCategory === category 
                   ? 'bg-gold text-brown-950 border-gold shadow-lg shadow-gold/20 scale-105' 
-                  : 'bg-transparent text-brown-300 border-white/10 hover:border-gold/50'
+                  : 'bg-gray-100 dark:bg-transparent text-gray-600 dark:text-brown-300 border-gray-200 dark:border-white/10 hover:border-gold/50'
                 }`}
               >
                 {category}
@@ -81,23 +81,23 @@ export default function ProjectsPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-brown-950/90 backdrop-blur-md cursor-zoom-out"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-white/95 dark:bg-brown-950/90 backdrop-blur-md cursor-zoom-out"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+              className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={selectedImage}
                 alt="Project Preview"
-                className="w-full h-full object-contain bg-brown-950"
+                className="w-full h-full object-contain bg-gray-50 dark:bg-brown-950"
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-6 right-6 w-12 h-12 glass flex items-center justify-center text-gold hover:bg-gold hover:text-brown-950 transition-all duration-300"
+                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-gold hover:bg-gold hover:text-brown-950 transition-all duration-300"
               >
                 <X className="w-6 h-6" />
               </button>

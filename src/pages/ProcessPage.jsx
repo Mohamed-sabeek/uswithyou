@@ -56,13 +56,13 @@ const StepCard = ({ step, index }) => {
       }`}
     >
       {/* Timeline Connector Dot (Desktop) */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-brown-950 border-2 border-gold rounded-full z-20 hidden md:block shadow-[0_0_10px_rgba(255,215,0,0.3)]" />
+      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-brown-950 border-2 border-gold rounded-full z-20 hidden md:block shadow-[0_0_10px_rgba(255,215,0,0.3)]" />
 
       {/* Content Card */}
       <div className={`w-full md:w-[45%] ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-        <div className="group relative glass p-8 md:p-10 hover:shadow-[0_0_30px_rgba(255,200,0,0.08)] hover:border-gold/30 transition-all duration-500 overflow-hidden">
+        <div className="group relative glass p-8 md:p-10 hover:shadow-[0_0_30px_rgba(255,200,0,0.08)] hover:border-gold/30 transition-all duration-500 overflow-hidden shadow-sm">
           {/* Step Number Backdrop */}
-          <div className="absolute top-4 right-8 text-8xl md:text-9xl font-display font-bold text-white/[0.02] group-hover:text-gold/[0.04] transition-all duration-700 select-none">
+          <div className="absolute top-4 right-8 text-8xl md:text-9xl font-display font-bold text-gray-100 dark:text-white/[0.02] group-hover:text-gold/[0.04] transition-all duration-700 select-none">
             {step.number}
           </div>
 
@@ -71,11 +71,11 @@ const StepCard = ({ step, index }) => {
               <step.icon className="w-6 h-6" />
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 group-hover:text-gold transition-colors">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gold transition-colors">
               {step.title}
             </h3>
 
-            <p className="text-brown-300 leading-relaxed italic text-base md:text-lg group-hover:text-brown-200 transition-colors">
+            <p className="text-gray-600 dark:text-brown-300 leading-relaxed italic text-base md:text-lg group-hover:text-gray-900 dark:group-hover:text-brown-200 transition-colors">
               {step.description}
             </p>
           </div>
@@ -93,13 +93,13 @@ const StepCard = ({ step, index }) => {
 
 export default function ProcessPage() {
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen bg-brown-950">
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-24 md:mb-32">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-brown-300 hover:text-gold transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-gray-500 dark:text-brown-300 hover:text-gold transition-colors mb-8 group font-medium"
           >
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Home
@@ -107,7 +107,7 @@ export default function ProcessPage() {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl font-display font-bold mb-8 leading-[0.9]"
+            className="text-5xl md:text-8xl font-display font-bold mb-8 leading-[0.9] text-gray-900 dark:text-white"
           >
             The <span className="text-gold italic">Process</span> Journey.
           </motion.h1>
@@ -115,7 +115,7 @@ export default function ProcessPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-brown-300 text-xl md:text-2xl max-w-3xl leading-relaxed italic font-light"
+            className="text-gray-600 dark:text-brown-300 text-xl md:text-2xl max-w-3xl leading-relaxed italic font-light"
           >
             A high-performance workflow engineered to transform complex concepts into seamless digital realities.
           </motion.p>
@@ -124,10 +124,10 @@ export default function ProcessPage() {
         {/* Timeline Container */}
         <div className="relative py-12">
           {/* Vertical Center Line (Desktop) */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/20 to-transparent hidden md:block" />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent hidden md:block" />
           
           {/* Vertical Left Line (Mobile) */}
-          <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/20 to-transparent md:hidden" />
+          <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent md:hidden" />
 
           {/* Steps Wrapper */}
           <div className="relative z-10">
@@ -142,16 +142,16 @@ export default function ProcessPage() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-32 p-12 md:p-20 glass border-gold/10 text-center relative overflow-hidden rounded-[2rem]"
+          className="mt-32 p-12 md:p-20 glass border-gray-200 dark:border-gold/10 text-center relative overflow-hidden rounded-[2rem] shadow-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.03] via-transparent to-transparent opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-gold/[0.05] dark:from-gold/[0.03] via-transparent to-transparent opacity-50" />
           
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-6xl font-display font-bold mb-8 leading-tight">
+            <h2 className="text-3xl md:text-6xl font-display font-bold mb-8 leading-tight text-gray-900 dark:text-white">
               Ready to start your <br className="hidden md:block" />
               <span className="text-gold italic underline decoration-gold/20 underline-offset-[12px]">Success Journey?</span>
             </h2>
-            <p className="text-brown-300 mb-12 max-w-2xl mx-auto text-lg md:text-xl italic font-light">
+            <p className="text-gray-600 dark:text-brown-300 mb-12 max-w-2xl mx-auto text-lg md:text-xl italic font-light">
               Let's combine our architectural precision with your bold vision to create the extraordinary.
             </p>
             <Link 

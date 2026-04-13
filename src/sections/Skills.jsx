@@ -65,9 +65,9 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 relative overflow-hidden">
+    <section id="skills" className="py-32 relative overflow-hidden bg-white dark:bg-brown-950 transition-colors duration-300">
       {/* Background Decorative Element */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/[0.02] rounded-full blur-[120px] -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/[0.05] dark:bg-gold/[0.02] rounded-full blur-[120px] -z-10" />
       
       <div className="container mx-auto px-6">
         <div className="text-center mb-20">
@@ -75,16 +75,16 @@ export default function Skills() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 dark:bg-gold/10 border border-gray-200 dark:border-gold/20 mb-6"
           >
             <span className="w-1.5 h-1.5 bg-gold rounded-full" />
-            <span className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">Tech Arsenal</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-gray-600 dark:text-gold uppercase">Tech Arsenal</span>
           </motion.div>
           
-          <h2 className="text-5xl md:text-6xl font-display font-bold mb-6 text-white leading-tight">
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-6 text-gray-900 dark:text-white leading-tight">
             Our <span className="text-gold italic">Digital Architecture</span>.
           </h2>
-          <p className="text-brown-300 max-w-2xl mx-auto text-lg italic leading-relaxed">
+          <p className="text-gray-600 dark:text-brown-300 max-w-2xl mx-auto text-lg italic leading-relaxed">
             A comprehensive suite of technologies designed to build, scale, and optimize modern web experiences.
           </p>
         </div>
@@ -101,11 +101,11 @@ export default function Skills() {
               key={index}
               variants={itemVariants}
               className={`group relative glass p-8 lg:p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/5 ${
-                category.highlight ? 'border-gold/30 bg-gold/[0.03]' : ''
+                category.highlight ? 'border-gold/30 bg-gold/[0.03] dark:bg-gold/[0.03]' : ''
               }`}
             >
               <div className="flex items-start justify-between mb-8">
-                <div className={`w-14 h-14 glass flex items-center justify-center text-gold group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500 shadow-xl shadow-gold/5 border border-white/5`}>
+                <div className={`w-14 h-14 glass shadow-sm flex items-center justify-center text-gold group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500 shadow-xl shadow-gold/5 border border-gray-100 dark:border-white/5`}>
                   <category.Icon className="w-7 h-7" />
                 </div>
                 {category.highlight && (
@@ -115,7 +115,7 @@ export default function Skills() {
                 )}
               </div>
 
-              <h3 className="text-2xl font-display font-bold mb-6 text-white group-hover:text-gold transition-colors">
+              <h3 className="text-2xl font-display font-bold mb-6 text-gray-900 dark:text-white group-hover:text-gold transition-colors">
                 {category.title}
               </h3>
 
@@ -123,7 +123,7 @@ export default function Skills() {
                 {category.skills.map((skill, sIndex) => (
                   <span
                     key={sIndex}
-                    className="text-[11px] px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-brown-300 font-medium tracking-tight group-hover:border-gold/30 group-hover:text-gold transition-all duration-300"
+                    className="text-[11px] px-3.5 py-1.5 rounded-full bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-300 font-medium tracking-tight group-hover:border-gold/30 group-hover:text-gold transition-all duration-300"
                   >
                     {skill}
                   </span>

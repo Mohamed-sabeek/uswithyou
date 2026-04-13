@@ -27,7 +27,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-24 relative overflow-hidden bg-gray-50 dark:bg-brown-950 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -36,23 +36,23 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-gray-900 dark:text-white">
               More than freelancers, <br />
               we are <span className="text-gold italic">your partners</span>.
             </h2>
-            <p className="text-brown-300 text-lg mb-10 leading-relaxed max-w-xl">
+            <p className="text-gray-600 dark:text-brown-300 text-lg mb-10 leading-relaxed max-w-xl">
               "UsWithYou" isn't just a name; it's our core philosophy. We don't just work for clients; we work with them to transform ideas into impactful digital realities.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4 group">
-                  <div className="w-12 h-12 glass flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-brown-950 transition-all duration-300">
+                  <div className="w-12 h-12 glass shadow-sm flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-brown-950 transition-all duration-300">
                     <feature.Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold mb-2">{feature.title}</h4>
-                    <p className="text-sm text-brown-300 leading-relaxed">{feature.description}</p>
+                    <h4 className="text-gray-900 dark:text-white font-bold mb-2">{feature.title}</h4>
+                    <p className="text-sm text-gray-500 dark:text-brown-300 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}

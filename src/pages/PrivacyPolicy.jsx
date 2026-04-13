@@ -2,8 +2,8 @@ import React from 'react'
 
 const LegalSection = ({ title, children }) => (
   <section className="mb-10">
-    <h2 className="text-xl font-semibold text-white mb-4 tracking-tight">{title}</h2>
-    <div className="text-brown-300 leading-relaxed text-base space-y-4 font-normal">
+    <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 tracking-tight">{title}</h2>
+    <div className="text-gray-600 dark:text-brown-300 leading-relaxed text-base space-y-4 font-normal">
       {children}
     </div>
   </section>
@@ -11,13 +11,13 @@ const LegalSection = ({ title, children }) => (
 
 export default function PrivacyPolicy() {
   return (
-    <div className="pt-32 pb-24 px-6 min-h-screen">
+    <div className="pt-32 pb-24 px-6 min-h-screen bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="max-w-3xl mx-auto">
         <header className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-white">
+          <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white">
             Privacy <span className="text-gold italic">Policy</span>
           </h1>
-          <p className="text-brown-400 text-sm italic">Protecting your digital footprint with transparency.</p>
+          <p className="text-gray-500 dark:text-brown-400 text-sm italic">Protecting your digital footprint with transparency.</p>
         </header>
 
         <LegalSection title="1. Introduction">

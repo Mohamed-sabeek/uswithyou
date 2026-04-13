@@ -28,7 +28,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden">
+    <section id="contact" className="py-24 relative overflow-hidden bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-6">
@@ -40,42 +40,42 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="w-full"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-gray-900 dark:text-white">
               Let's build <br />
               <span className="text-gold italic">together</span>.
             </h2>
-            <p className="text-brown-300 text-lg mb-12 leading-relaxed max-w-lg">
+            <p className="text-gray-600 dark:text-brown-300 text-lg mb-12 leading-relaxed max-w-lg">
               Have a visionary project in mind? We'd love to hear from you. Let's discuss how we can bring your ideas to life with trust and excellence.
             </p>
 
             <div className="space-y-8">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 glass flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
+                <div className="w-14 h-14 glass shadow-sm flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Email Us</h4>
-                  <p className="text-brown-300">safeeofficial1730@gmail.com</p>
+                  <h4 className="text-gray-900 dark:text-white font-bold mb-1">Email Us</h4>
+                  <p className="text-gray-600 dark:text-brown-300">safeeofficial1730@gmail.com</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 glass flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
+                <div className="w-14 h-14 glass shadow-sm flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
                   <MessageSquare className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">WhatsApp</h4>
-                  <p className="text-brown-300">+91 6383028607</p>
+                  <h4 className="text-gray-900 dark:text-white font-bold mb-1">WhatsApp</h4>
+                  <p className="text-gray-600 dark:text-brown-300">+91 6383028607</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 glass flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
+                <div className="w-14 h-14 glass shadow-sm flex items-center justify-center text-gold group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold mb-1">Office</h4>
-                  <p className="text-brown-300">
+                  <h4 className="text-gray-900 dark:text-white font-bold mb-1">Office</h4>
+                  <p className="text-gray-600 dark:text-brown-300">
                     Based in Coimbatore, India <br />
                     Operating Globally
                   </p>
@@ -100,11 +100,11 @@ export default function Contact() {
                 <div className="w-20 h-20 bg-gold/10 border-2 border-gold rounded-full flex items-center justify-center mx-auto mb-8">
                   <CheckCircle className="w-10 h-10 text-gold" />
                 </div>
-                <h3 className="text-3xl font-display font-bold text-white mb-4">Message Sent!</h3>
-                <p className="text-brown-300 px-6">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <h3 className="text-3xl font-display font-bold text-gray-900 dark:text-white mb-4">Message Sent!</h3>
+                <p className="text-gray-600 dark:text-brown-300 px-6">Thank you for reaching out. We'll get back to you within 24 hours.</p>
                 <button
                   onClick={() => setFormState('idle')}
-                  className="mt-8 btn-secondary"
+                  className="mt-8 btn-secondary border-gray-200 dark:border-white/10"
                 >
                   Send another message
                 </button>
@@ -113,34 +113,34 @@ export default function Contact() {
               <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-bold text-brown-300 uppercase tracking-widest mb-3">Your Name</label>
+                    <label className="block text-sm font-bold text-gray-500 dark:text-brown-300 uppercase tracking-widest mb-3">Your Name</label>
                     <input
                       required
                       type="text"
                       name="user_name"
-                      className="w-full bg-brown-950 border border-white/5 rounded-xl px-4 py-4 text-brown-100 focus:border-gold focus:outline-none transition-colors"
+                      className="w-full bg-gray-50 dark:bg-brown-950 border border-gray-200 dark:border-white/5 rounded-xl px-4 py-4 text-gray-900 dark:text-brown-100 focus:border-gold focus:outline-none transition-colors"
                       placeholder="UsWithYou"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-brown-300 uppercase tracking-widest mb-3">Email Address</label>
+                    <label className="block text-sm font-bold text-gray-500 dark:text-brown-300 uppercase tracking-widest mb-3">Email Address</label>
                     <input
                       required
                       type="email"
                       name="user_email"
-                      className="w-full bg-brown-950 border border-white/5 rounded-xl px-4 py-4 text-brown-100 focus:border-gold focus:outline-none transition-colors"
+                      className="w-full bg-gray-50 dark:bg-brown-950 border border-gray-200 dark:border-white/5 rounded-xl px-4 py-4 text-gray-900 dark:text-brown-100 focus:border-gold focus:outline-none transition-colors"
                       placeholder="uswithyou@example.com"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-brown-300 uppercase tracking-widest mb-3">Project Details</label>
+                  <label className="block text-sm font-bold text-gray-500 dark:text-brown-300 uppercase tracking-widest mb-3">Project Details</label>
                   <textarea
                     required
                     rows="5"
                     name="message"
-                    className="w-full bg-brown-950 border border-white/5 rounded-xl px-4 py-4 text-brown-100 focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full bg-gray-50 dark:bg-brown-950 border border-gray-200 dark:border-white/5 rounded-xl px-4 py-4 text-gray-900 dark:text-brown-100 focus:border-gold focus:outline-none transition-colors resize-none"
                     placeholder="Tell us about your project vision..."
                   ></textarea>
                 </div>

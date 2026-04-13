@@ -6,108 +6,129 @@ const PROCESS_STEPS = [
   {
     number: '01',
     title: 'Discussion',
-    description: 'We understand your idea, requirements, and goals.',
+    description: 'We dive deep into your vision, goals, and requirements.',
     icon: MessageSquare,
   },
   {
     number: '02',
     title: 'Planning',
-    description: 'We design the architecture, tech stack, and timeline.',
+    description: 'We craft architecture, timelines, and scalable strategy.',
     icon: FileText,
   },
   {
     number: '03',
     title: 'Development',
-    description: 'We build your solution with clean and scalable code.',
+    description: 'We build fast, clean, and scalable systems.',
     icon: Code2,
   },
   {
     number: '04',
     title: 'Testing',
-    description: 'We ensure performance, security, and bug-free delivery.',
+    description: 'We ensure performance, security, and reliability.',
     icon: ShieldCheck,
   },
   {
     number: '05',
     title: 'Delivery',
-    description: 'We deploy and deliver your project smoothly.',
+    description: 'We launch smoothly with zero friction.',
     icon: Rocket,
   },
   {
     number: '06',
     title: 'Support',
-    description: 'We provide ongoing support and improvements.',
+    description: 'We provide continuous support and improvements.',
     icon: LifeBuoy,
   },
 ]
 
+const StepCard = ({ step, index }) => {
+  const isEven = index % 2 === 1
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, delay: index * 0.1 }}
+      className={`relative flex items-center justify-center w-full mb-16 md:mb-24 last:mb-0 ${
+        isEven ? 'md:flex-row-reverse' : 'md:flex-row'
+      }`}
+    >
+      {/* Timeline Connector Dot (Desktop) */}
+      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-brown-950 border-2 border-gold rounded-full z-20 hidden md:block shadow-[0_0_10px_rgba(255,215,0,0.3)]" />
+
+      {/* Content Card */}
+      <div className={`w-full md:w-[45%] ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
+        <div className="group relative glass p-8 md:p-10 hover:shadow-[0_0_30px_rgba(255,200,0,0.08)] hover:border-gold/30 transition-all duration-500 overflow-hidden shadow-sm">
+          {/* Step Number Backdrop */}
+          <div className="absolute top-4 right-8 text-8xl md:text-9xl font-display font-bold text-gray-100 dark:text-white/[0.02] group-hover:text-gold/[0.04] transition-all duration-700 select-none">
+            {step.number}
+          </div>
+
+          <div className="relative z-10">
+            <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-gold/5">
+              <step.icon className="w-6 h-6" />
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gold transition-colors">
+              {step.title}
+            </h3>
+
+            <p className="text-gray-600 dark:text-brown-300 leading-relaxed italic text-base md:text-lg group-hover:text-gray-900 dark:group-hover:text-brown-200 transition-colors">
+              {step.description}
+            </p>
+          </div>
+
+          {/* Bottom Accent Line */}
+          <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700" />
+        </div>
+      </div>
+
+      {/* Spacer for the other side (Desktop) */}
+      <div className="hidden md:block w-[45%]" />
+    </motion.div>
+  )
+}
+
 export default function Process() {
   return (
-    <section id="process" className="py-24 relative overflow-hidden px-6">
-      {/* Background Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10 bg-radial-gold opacity-[0.03]"></div>
-      
+    <section id="process" className="py-24 relative overflow-hidden bg-white dark:bg-brown-950 transition-colors duration-300 px-6">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 px-6">
+        {/* Header */}
+        <div className="text-center mb-24 md:mb-32">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-display font-bold mb-4"
+            className="text-4xl md:text-6xl font-display font-bold mb-8 text-gray-900 dark:text-white"
           >
-            How We <span className="text-gold italic">Work With You</span>
+            The <span className="text-gold italic">Process</span> Journey.
           </motion.h2>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: '80px' }}
-            viewport={{ once: true }}
-            className="h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-6"
-          />
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-brown-300 max-w-xl mx-auto px-6"
+            transition={{ delay: 0.1 }}
+            className="text-gray-600 dark:text-brown-300 text-xl max-w-2xl mx-auto leading-relaxed italic font-light"
           >
-            A clear, transparent process to turn your ideas into reality.
+            A high-performance workflow engineered to transform complex concepts into seamless digital realities.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROCESS_STEPS.map((step, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative glass p-8 hover:shadow-2xl hover:shadow-gold/5 transition-all duration-500 overflow-hidden"
-            >
-              <div className="absolute top-4 right-6 text-6xl font-display font-bold text-white/5 group-hover:text-gold/10 transition-colors">
-                {step.number}
-              </div>
-              
-              <div className="w-14 h-14 glass flex items-center justify-center text-gold mb-6 group-hover:scale-110 transition-transform shadow-xl shadow-gold/5">
-                <step.icon className="w-6 h-6" />
-              </div>
-              
-              <h3 className="text-2xl font-display font-bold text-white mb-4 group-hover:text-gold transition-colors">
-                {step.title}
-              </h3>
-              
-              <p className="text-brown-300 leading-relaxed italic text-sm">
-                {step.description}
-              </p>
+        {/* Timeline Container */}
+        <div className="relative py-12">
+          {/* Vertical Center Line (Desktop) */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent hidden md:block" />
+          
+          {/* Vertical Left Line (Mobile) */}
+          <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent md:hidden" />
 
-              {/* Connecting element for desktop (simple indicator) */}
-              {index < PROCESS_STEPS.length - 1 && (
-                <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20">
-                  <div className="w-8 h-[2px] bg-gradient-to-r from-gold/30 to-transparent"></div>
-                </div>
-              )}
-            </motion.div>
-          ))}
+          {/* Steps Wrapper */}
+          <div className="relative z-10">
+            {PROCESS_STEPS.map((step, index) => (
+              <StepCard key={index} step={step} index={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

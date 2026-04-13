@@ -7,6 +7,7 @@ import ProjectsPage from './pages/ProjectsPage'
 import ProcessPage from './pages/ProcessPage'
 import PrivacyPolicy from './pages/PrivacyPolicy'
 import TermsOfService from './pages/TermsOfService'
+import { ThemeProvider } from './context/ThemeContext'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -22,18 +23,20 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="projects" element={<ProjectsPage />} />
-          <Route path="process" element={<ProcessPage />} />
-          <Route path="privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="terms-of-service" element={<TermsOfService />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="process" element={<ProcessPage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="terms-of-service" element={<TermsOfService />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

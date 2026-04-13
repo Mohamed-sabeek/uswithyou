@@ -6,14 +6,14 @@ export default function ProjectCard({ project, onViewImage, index }) {
   const [isTestimonialVisible, setIsTestimonialVisible] = useState(true)
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-center">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-center transition-colors duration-300">
       {/* Project Card (Left Side) - Main Hero */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: index * 0.1 }}
-        className="flex-1 lg:max-w-[720px] group relative glass p-4 md:p-6 overflow-hidden shadow-2xl hover:shadow-gold/5 transition-all duration-500"
+        className="flex-1 lg:max-w-[720px] group relative glass p-4 md:p-6 shadow-2xl hover:shadow-gold/5 transition-all duration-500 overflow-hidden"
       >
         {/* Project Image Container */}
         <div className="relative aspect-video overflow-hidden rounded-xl mb-8 group-hover:scale-[1.01] transition-transform duration-700">
@@ -40,11 +40,11 @@ export default function ProjectCard({ project, onViewImage, index }) {
             </span>
           </div>
           
-          <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 text-white group-hover:text-gold transition-colors">
+          <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-900 dark:text-white group-hover:text-gold transition-colors">
             {project.title}
           </h3>
           
-          <p className="text-brown-300 mb-6 leading-relaxed italic text-base md:text-lg max-w-2xl">
+          <p className="text-gray-600 dark:text-brown-300 mb-6 leading-relaxed italic text-base md:text-lg max-w-2xl">
             {project.description}
           </p>
 
@@ -52,7 +52,7 @@ export default function ProjectCard({ project, onViewImage, index }) {
             {project.tags.map((tag, tIndex) => (
               <span
                 key={tIndex}
-                className="px-3 py-1.5 glass-dark text-[10px] font-bold text-brown-300 uppercase tracking-tight"
+                className="px-3 py-1.5 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[10px] font-bold text-gray-700 dark:text-gray-300 uppercase tracking-tight rounded-lg"
               >
                 {tag}
               </span>
@@ -84,12 +84,12 @@ export default function ProjectCard({ project, onViewImage, index }) {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: 20 }}
                 transition={{ duration: 0.4 }}
-                className="relative bg-white/[0.07] border border-white/20 backdrop-blur-xl p-6 rounded-3xl group/testimonial hover:border-gold/30 transition-all shadow-2xl shadow-black/40"
+                className="relative bg-gray-50/80 dark:bg-white/[0.07] border border-gray-200 dark:border-white/20 backdrop-blur-xl p-6 rounded-3xl group/testimonial hover:border-gold/30 transition-all shadow-2xl shadow-black/10 dark:shadow-black/40"
               >
                 {/* Subtle Toggle Button */}
                 <button
                   onClick={() => setIsTestimonialVisible(false)}
-                  className="absolute top-6 right-6 text-white/30 hover:text-gold transition-all hover:scale-110"
+                  className="absolute top-6 right-6 text-gray-400 dark:text-white/30 hover:text-gold transition-all hover:scale-110"
                 >
                   <ChevronDown className="w-5 h-5" />
                 </button>
@@ -98,11 +98,11 @@ export default function ProjectCard({ project, onViewImage, index }) {
                   <Quote className="w-8 h-8 text-gold/20 -scale-x-100 mb-1" />
                 </div>
 
-                <p className="text-white/90 italic text-base mb-6 leading-relaxed relative z-10 font-medium">
+                <p className="text-gray-800 dark:text-white/90 italic text-base mb-6 leading-relaxed relative z-10 font-medium">
                   "{project.testimonial.content}"
                 </p>
 
-                <div className="flex items-center gap-4 border-t border-white/10 pt-4">
+                <div className="flex items-center gap-4 border-t border-gray-200 dark:border-white/10 pt-4">
                   <div className="w-12 h-12 rounded-full border-2 border-gold/20 p-0.5 overflow-hidden shadow-lg shadow-gold/5">
                     <img
                       src={project.testimonial.avatar}
@@ -111,7 +111,7 @@ export default function ProjectCard({ project, onViewImage, index }) {
                     />
                   </div>
                   <div className="min-w-0">
-                    <h4 className="text-white font-bold text-sm uppercase tracking-wider truncate">
+                    <h4 className="text-gray-900 dark:text-white font-bold text-sm uppercase tracking-wider truncate">
                       {project.testimonial.author}
                     </h4>
                     <p className="text-gold text-[10px] font-bold uppercase tracking-[0.2em] opacity-80 mt-0.5">
@@ -136,7 +136,7 @@ export default function ProjectCard({ project, onViewImage, index }) {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 onClick={() => setIsTestimonialVisible(true)}
-                className="flex ml-auto items-center gap-3 px-6 py-3 bg-white/10 border border-white/20 backdrop-blur-md rounded-full text-gold hover:bg-gold hover:text-brown-950 transition-all group shadow-xl hover:shadow-gold/20"
+                className="flex ml-auto items-center gap-3 px-6 py-3 bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/20 backdrop-blur-md rounded-full text-gold hover:bg-gold hover:text-brown-950 transition-all group shadow-xl hover:shadow-gold/20"
               >
                 <Quote className="w-4 h-4 opacity-80" />
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em]">View Review</span>

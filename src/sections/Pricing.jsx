@@ -50,7 +50,7 @@ export default function Pricing() {
   const whatsappBaseUrl = `https://wa.me/91${whatsappNumber}`
 
   return (
-    <section id="pricing" className="py-24 relative overflow-hidden px-6">
+    <section id="pricing" className="py-24 relative overflow-hidden px-6 bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <motion.div
@@ -59,7 +59,7 @@ export default function Pricing() {
             viewport={{ once: true }}
             className="flex items-center justify-center gap-3 mb-4"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
               Invest in your <span className="text-gold italic">Growth</span>
             </h2>
             <TrendingUp className="text-gold w-8 h-8 md:w-10 md:h-10" />
@@ -85,8 +85,8 @@ export default function Pricing() {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-brown-300 font-bold tracking-[0.2em] mb-6">{plan.title}</h3>
-                <div className="text-3xl md:text-4xl font-display font-bold text-white mb-2">
+                <h3 className="text-gray-500 dark:text-brown-300 font-bold tracking-[0.2em] mb-6">{plan.title}</h3>
+                <div className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-2">
                   {plan.price}
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function Pricing() {
                     <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3 h-3 text-gold" />
                     </div>
-                    <span className="text-brown-200 text-sm leading-relaxed">{feature}</span>
+                    <span className="text-gray-600 dark:text-brown-200 text-sm leading-relaxed">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -108,7 +108,7 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-xl text-center font-bold tracking-widest text-sm transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-gold text-brown-950 hover:bg-white hover:text-brown-950 shadow-xl shadow-gold/20'
+                    ? 'bg-gold text-brown-950 hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-brown-950 shadow-xl shadow-gold/20'
                     : 'bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-brown-950'
                 }`}
               >

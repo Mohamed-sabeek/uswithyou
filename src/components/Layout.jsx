@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 export default function Layout() {
   return (
-    <div className="bg-brown-950 min-h-screen selection:bg-gold selection:text-brown-950 overflow-x-hidden">
+    <div className="bg-white dark:bg-brown-950 min-h-screen selection:bg-gold selection:text-brown-950 overflow-x-hidden transition-colors duration-300">
       <Navbar />
       <main>
         <Outlet />
