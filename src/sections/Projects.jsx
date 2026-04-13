@@ -1,19 +1,10 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, ArrowRight, Maximize2, X } from 'lucide-react'
-import haarisCakesImg from '../assets/haaris-cakes.webp'
+import { ExternalLink, Github, ArrowRight, X } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { PROJECTS_DATA } from '../data/projects'
 
-const PROJECTS_DATA = [
-  {
-    title: 'Haaris Cakes',
-    category: '#1 Paid Client Project',
-    description: 'A professional business website for Haaris Cakes in Aranthangi, Tamil Nadu, featuring integrated WhatsApp ordering and product galleries.',
-    image: haarisCakesImg,
-    tags: ['React', 'Tailwind', 'Vite', 'WhatsApp API'],
-    liveUrl: 'https://haariscakes.in',
-    githubUrl: '#',
-  },
-]
+const featuredProjects = PROJECTS_DATA.filter(p => p.featured)
 
 export default function Projects() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -30,20 +21,18 @@ export default function Projects() {
               A selection of our most impactful digital solutions, delivered with excellence and trust.
             </p>
           </div>
-          <a 
-            href="/projects" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/projects" 
             className="btn-secondary hidden md:flex items-center gap-2 group"
           >
             View All Projects
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
 
         <div className="flex justify-center">
           <div className="max-w-3xl w-full">
-            {PROJECTS_DATA.map((project, index) => (
+            {featuredProjects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -109,15 +98,13 @@ export default function Projects() {
         </div>
 
         <div className="mt-16 text-center md:hidden">
-          <a 
-            href="/projects" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/projects" 
             className="btn-secondary w-full py-4 inline-flex items-center justify-center gap-2"
           >
             View All Projects
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
       </div>
 
