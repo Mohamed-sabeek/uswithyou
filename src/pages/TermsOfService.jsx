@@ -15,9 +15,9 @@ export default function TermsOfService() {
       <div className="max-w-3xl mx-auto">
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white">
-            Terms of <span className="text-gold italic">Service</span>
+            Terms of <span className="text-yellow-500 dark:text-gold italic">Service</span>
           </h1>
-          <p className="text-gray-500 dark:text-brown-400 text-sm italic">Defining our professional commitment and your experience.</p>
+          <p className="text-gray-600 dark:text-brown-400 text-sm italic">Defining our professional commitment and your experience.</p>
         </header>
 
         <LegalSection title="1. Introduction">
@@ -66,10 +66,10 @@ export default function TermsOfService() {
           <p>
             If you have questions regarding these terms, please contact us at:
           </p>
-          <p className="text-gold font-bold tracking-wide">uswithyou.team@gmail.com</p>
+          <p className="text-yellow-500 dark:text-gold font-bold tracking-wide">uswithyou.team@gmail.com</p>
         </LegalSection>
 
-        <div className="mt-20 pt-8 border-t border-white/5 text-xs text-brown-400 italic">
+        <div className="mt-20 pt-8 border-t border-gray-100 dark:border-white/5 text-xs text-gray-600 dark:text-brown-400 italic">
           Last updated: April 13, 2026
         </div>
       </div>

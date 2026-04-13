@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 transition-colors duration-300 font-sans selection:bg-gold selection:text-brown-950;
+    @apply bg-white text-gray-900 transition-colors duration-300 font-sans selection:bg-yellow-400 selection:text-gray-900;
     @apply dark:bg-brown-950 dark:text-brown-100;
     scroll-behavior: smooth;
   }
@@ -19,20 +19,21 @@
 
 @layer components {
   .glass {
-    @apply bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl transition-all duration-300;
+    @apply bg-white/70 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 rounded-2xl transition-all duration-300 shadow-sm dark:shadow-none;
   }
   
   .glass-dark {
-    @apply bg-gray-900/5 dark:bg-brown-950/40 backdrop-blur-xl border border-gray-200 dark:border-white/5 rounded-2xl transition-all duration-300;
+    @apply bg-gray-50 dark:bg-brown-950/40 backdrop-blur-xl border border-gray-200 dark:border-white/5 rounded-2xl transition-all duration-300 shadow-sm dark:shadow-none;
   }
 
   .btn-primary {
-    @apply bg-gold text-brown-950 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,212,0,0.4)] hover:brightness-110 active:scale-95 shadow-lg shadow-gold/20;
-    background: linear-gradient(135deg, #FFD400 0%, #FFE14D 50%, #FFD400 100%);
+    @apply bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:shadow-[0_0_20px_rgba(250,204,21,0.4)] hover:brightness-110 active:scale-95 shadow-lg shadow-yellow-400/20;
+    background: linear-gradient(135deg, #facc15 0%, #fde047 50%, #facc15 100%);
   }
 
   .btn-secondary {
-    @apply border border-gold text-gold px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-gold hover:text-brown-950 active:scale-95;
+    @apply border border-gray-200 bg-white text-gray-900 px-8 py-3 rounded-full font-bold transition-all duration-300 hover:bg-gray-50 hover:border-gray-300 active:scale-95 shadow-sm;
+    @apply dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10;
   }
 }
 
@@ -42,11 +43,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-brown-950;
+  @apply bg-gray-50 dark:bg-brown-950;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gold/20 rounded-full hover:bg-gold/40 transition-colors;
+  @apply bg-gray-300 dark:bg-white/10 rounded-full hover:bg-gray-400 dark:hover:bg-white/20 transition-colors;
 }
 
 /* Mesh Gradient Animation */
@@ -62,7 +63,8 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, #3d2a0e 0%, transparent 60%);
+  @apply bg-white dark:bg-transparent;
+  background-image: radial-gradient(circle at center, rgba(234, 179, 8, 0.05) 0%, transparent 60%);
   filter: blur(80px);
   z-index: -1;
   animation: mesh-move 20s infinite linear;

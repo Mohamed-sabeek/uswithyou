@@ -27,7 +27,7 @@ const features = [
 
 export default function About() {
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-gray-50 dark:bg-brown-950 transition-colors duration-300">
+    <section id="about" className="py-24 relative overflow-hidden bg-white dark:bg-brown-950 transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -38,7 +38,7 @@ export default function About() {
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 text-gray-900 dark:text-white">
               More than freelancers, <br />
-              we are <span className="text-gold italic">your partners</span>.
+              we are <span className="text-yellow-500 dark:text-gold italic">your partners</span>.
             </h2>
             <p className="text-gray-600 dark:text-brown-300 text-lg mb-10 leading-relaxed max-w-xl">
               "UsWithYou" isn't just a name; it's our core philosophy. We don't just work for clients; we work with them to transform ideas into impactful digital realities.
@@ -47,12 +47,12 @@ export default function About() {
             <div className="grid sm:grid-cols-2 gap-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex gap-4 group">
-                  <div className="w-12 h-12 glass shadow-sm flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-brown-950 transition-all duration-300">
+                  <div className="w-12 h-12 glass shadow-sm flex items-center justify-center text-yellow-500 dark:text-gold group-hover:bg-yellow-400 dark:group-hover:bg-gold group-hover:text-gray-900 transition-all duration-300">
                     <feature.Icon className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="text-gray-900 dark:text-white font-bold mb-2">{feature.title}</h4>
-                    <p className="text-sm text-gray-500 dark:text-brown-300 leading-relaxed">{feature.description}</p>
+                    <p className="text-sm text-gray-600 dark:text-brown-300 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -72,12 +72,12 @@ export default function About() {
                 alt="Team Collaboration"
                 className="w-full h-auto rounded-lg grayscale group-hover:grayscale-0 transition-all duration-700"
               />
-              <div className="absolute inset-0 bg-gold/10 group-hover:bg-transparent transition-colors duration-700"></div>
+              <div className="absolute inset-0 bg-yellow-400/5 group-hover:bg-transparent transition-colors duration-700"></div>
             </div>
             
             {/* Background Decorative Element */}
-            <div className="absolute -inset-4 border-2 border-gold/10 rounded-2xl rotate-6 -z-10 group-hover:rotate-0 transition-transform duration-700"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gold/20 blur-[100px] -z-20"></div>
+            <div className="absolute -inset-4 border-2 border-gray-100 dark:border-white/5 rounded-2xl rotate-6 -z-10 group-hover:rotate-0 transition-transform duration-700"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-yellow-400/5 blur-[100px] -z-20"></div>
           </motion.div>
         </div>
       </div>

@@ -55,32 +55,32 @@ const StepCard = ({ step, index }) => {
       }`}
     >
       {/* Timeline Connector Dot (Desktop) */}
-      <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-white dark:bg-brown-950 border-2 border-gold rounded-full z-20 hidden md:block shadow-[0_0_10px_rgba(255,215,0,0.3)]" />
+      <div className="absolute left-1/2 -translate-x-1/2 w-5 h-5 bg-white dark:bg-brown-950 border-2 border-yellow-500 dark:border-gold rounded-full z-20 hidden md:block shadow-[0_0_15px_rgba(250,204,21,0.5)] dark:shadow-[0_0_15px_rgba(255,215,0,0.5)]" />
 
       {/* Content Card */}
       <div className={`w-full md:w-[45%] ${isEven ? 'md:pl-12' : 'md:pr-12'}`}>
-        <div className="group relative glass p-8 md:p-10 hover:shadow-[0_0_30px_rgba(255,200,0,0.08)] hover:border-gold/30 transition-all duration-500 overflow-hidden shadow-sm">
+        <div className="group relative glass p-8 md:p-10 hover:shadow-2xl hover:shadow-gray-300/50 dark:hover:shadow-none hover:border-yellow-400/30 dark:hover:border-gold/30 transition-all duration-500 overflow-hidden shadow-sm border border-gray-200 dark:border-white/5">
           {/* Step Number Backdrop */}
-          <div className="absolute top-4 right-8 text-8xl md:text-9xl font-display font-bold text-gray-100 dark:text-white/[0.02] group-hover:text-gold/[0.04] transition-all duration-700 select-none">
+          <div className="absolute top-4 right-8 text-8xl md:text-9xl font-display font-bold text-gray-900/[0.08] dark:text-white/[0.02] group-hover:text-yellow-500/[0.08] dark:group-hover:text-gold/[0.04] transition-all duration-700 select-none">
             {step.number}
           </div>
 
           <div className="relative z-10">
-            <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-gold mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-gold/5">
+            <div className="w-12 h-12 rounded-xl bg-yellow-400/20 dark:bg-gold/10 flex items-center justify-center text-yellow-500 dark:text-gold mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl shadow-gray-300/15 dark:shadow-gold/5 border border-gray-200 dark:border-white/5">
               <step.icon className="w-6 h-6" />
             </div>
 
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-gold transition-colors">
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-yellow-500 dark:group-hover:text-gold transition-colors">
               {step.title}
             </h3>
 
-            <p className="text-gray-600 dark:text-brown-300 leading-relaxed italic text-base md:text-lg group-hover:text-gray-900 dark:group-hover:text-brown-200 transition-colors">
+            <p className="text-gray-700 dark:text-brown-300 leading-relaxed italic text-base md:text-lg group-hover:text-gray-900 dark:group-hover:text-brown-200 transition-colors">
               {step.description}
             </p>
           </div>
 
           {/* Bottom Accent Line */}
-          <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700" />
+          <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-yellow-500 dark:bg-gold group-hover:w-full transition-all duration-700" />
         </div>
       </div>
 
@@ -102,7 +102,7 @@ export default function Process() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-display font-bold mb-8 text-gray-900 dark:text-white"
           >
-            The <span className="text-gold italic">Process</span> Journey.
+            The <span className="text-yellow-500 dark:text-gold italic">Process</span> Journey.
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -118,10 +118,10 @@ export default function Process() {
         {/* Timeline Container */}
         <div className="relative py-12">
           {/* Vertical Center Line (Desktop) */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent hidden md:block" />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-yellow-400/50 dark:via-gold/20 to-transparent hidden md:block" />
           
           {/* Vertical Left Line (Mobile) */}
-          <div className="absolute left-4 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-gold/30 dark:via-gold/20 to-transparent md:hidden" />
+          <div className="absolute left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-yellow-400/50 dark:via-gold/20 to-transparent md:hidden" />
 
           {/* Steps Wrapper */}
           <div className="relative z-10">

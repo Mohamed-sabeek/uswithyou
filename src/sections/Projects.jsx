@@ -16,7 +16,7 @@ export default function Projects() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white">
-              Our <span className="text-gold italic">Work</span>.
+              Our <span className="text-yellow-500 dark:text-gold italic">Work</span>.
             </h2>
             <p className="text-gray-600 dark:text-brown-300">
               A selection of our most impactful digital solutions, delivered with excellence and trust.
@@ -69,7 +69,7 @@ export default function Projects() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-gold/20"
+              className="relative max-w-5xl w-full aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/20 dark:shadow-none"
               onClick={(e) => e.stopPropagation()}
             >
               <img
@@ -79,7 +79,7 @@ export default function Projects() {
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-gold hover:bg-gold hover:text-brown-950 transition-all duration-300"
+                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-yellow-500 hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 border border-gray-100 dark:border-white/5"
               >
                 <X className="w-6 h-6" />
               </button>

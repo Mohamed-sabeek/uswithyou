@@ -17,8 +17,16 @@ export default {
           950: '#110c04',
         },
         gold: {
+          50: '#FFF9E5',
+          100: '#FFF4CC',
+          300: '#E6C200',
+          500: '#FFD400', // DEFAULT
+          600: '#BD9A00', // dark
+          900: '#4D3E00',
+          950: '#2B2300',
           DEFAULT: '#FFD400',
           light: '#FFF4CC',
+          dark: '#B89000',
         },
         bronze: '#8c6239',
       },

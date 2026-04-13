@@ -42,7 +42,7 @@ export default function Services() {
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl px-6">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white">
-              Our <span className="text-gold italic">Services</span>.
+              Our <span className="text-yellow-500 dark:text-gold italic">Services</span>.
             </h2>
             <p className="text-gray-600 dark:text-brown-300">
               We offer a comprehensive range of digital solutions to help your business thrive in the modern web landscape.
@@ -53,29 +53,29 @@ export default function Services() {
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             className="hidden md:block w-24 h-24 border border-gray-200 dark:border-gold/20 rounded-full flex items-center justify-center"
           >
-            <div className="w-2 h-2 bg-gold rounded-full"></div>
+            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
           </motion.div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {SERVICES_DATA.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="group relative p-10 glass-dark hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 overflow-hidden"
-            >
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-gold opacity-0 group-hover:opacity-5 rounded-full blur-3xl transition-opacity duration-300 pointer-events-none"></div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="group relative p-10 glass hover:border-yellow-400/30 dark:hover:border-gold/30 hover:bg-yellow-400/5 transition-all duration-300 overflow-hidden shadow-xl shadow-gray-200/50 dark:shadow-none"
+              >
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-yellow-400 opacity-0 group-hover:opacity-5 rounded-full blur-3xl transition-opacity duration-300 pointer-events-none"></div>
 
-              <div className="w-14 h-14 glass shadow-sm mb-8 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-brown-950 transition-all duration-500 transform group-hover:rotate-6">
+              <div className="w-14 h-14 glass shadow-sm mb-8 flex items-center justify-center text-yellow-500 dark:text-gold group-hover:bg-yellow-400 dark:group-hover:bg-gold group-hover:text-gray-900 transition-all duration-500 transform group-hover:rotate-6">
                 <service.Icon className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-display font-bold mb-4 text-gray-900 dark:text-white group-hover:text-gold transition-colors">{service.title}</h3>
+              <h3 className="text-2xl font-display font-bold mb-4 text-gray-900 dark:text-white group-hover:text-yellow-500 dark:group-hover:text-gold transition-colors">{service.title}</h3>
               <p className="text-gray-600 dark:text-brown-300 leading-relaxed mb-6 italic">{service.description}</p>
               
-              <div className="flex items-center gap-2 text-gold font-bold text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="flex items-center gap-2 text-yellow-500 dark:text-gold font-bold text-sm tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 Explore <Zap className="w-3 h-3" />
               </div>
             </motion.div>
@@ -84,7 +84,7 @@ export default function Services() {
         <div className="mt-16 text-center">
           <Link 
             to="/process" 
-            className="btn-secondary inline-flex items-center gap-2 group hover:bg-gold hover:text-brown-950 px-8 py-4 transition-all duration-300"
+            className="btn-secondary inline-flex items-center gap-2 group px-8 py-4 transition-all duration-300"
           >
             Explore Our Process
             <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

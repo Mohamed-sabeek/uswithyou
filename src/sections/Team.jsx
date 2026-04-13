@@ -33,11 +33,11 @@ export default function Team() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="team" className="py-24 bg-gray-50 dark:bg-brown-950/20 px-6 relative transition-colors duration-300">
+    <section id="team" className="py-24 bg-white dark:bg-brown-950/20 px-6 relative transition-colors duration-300">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 px-6">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 text-gray-900 dark:text-white">
-            Meet the <span className="text-gold italic">Visionaries</span>.
+            Meet the <span className="text-yellow-500 dark:text-gold italic">Visionaries</span>.
           </h2>
           <p className="text-gray-600 dark:text-brown-300 max-w-xl mx-auto px-6">
             A small, dedicated team of experts focused on delivering excellence with every project.
@@ -52,7 +52,7 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative glass p-6 hover:shadow-[0_20px_50px_rgba(212,175,55,0.1)] hover:-translate-y-3 transition-all duration-500 overflow-hidden border border-gray-200 dark:border-white/5 hover:border-gold/30"
+              className="group relative glass p-6 hover:shadow-2xl hover:shadow-gray-200/50 hover:-translate-y-3 transition-all duration-500 overflow-hidden border border-gray-200 dark:border-white/5 hover:border-yellow-400/30"
             >
               <div className="relative aspect-square overflow-hidden rounded-xl mb-8 transition-all duration-700 shadow-2xl shadow-black/10 dark:shadow-black/50">
                 <img
@@ -65,29 +65,29 @@ export default function Team() {
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/20 backdrop-blur-[2px] z-20">
                   <button
                     onClick={() => setSelectedImage(member.image)}
-                    className="px-6 py-2.5 glass-dark rounded-full text-white font-bold tracking-[0.2em] text-[10px] hover:bg-gold hover:text-brown-950 transition-all duration-300 shadow-2xl border border-white/10 uppercase"
+                    className="px-6 py-2.5 bg-white dark:bg-brown-950/40 rounded-full text-gray-900 dark:text-white font-bold tracking-[0.2em] text-[10px] hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 shadow-2xl border border-gray-200 dark:border-white/10 uppercase"
                   >
                     View Full Image
                   </button>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 dark:from-brown-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/40 dark:bg-brown-950/40 backdrop-blur-md flex justify-center gap-6 z-30 border-t border-gray-200 dark:border-white/10">
-                  <a href={member.socials.linkedin} className="text-gray-600 dark:text-brown-300 hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Linkedin size={18} /></a>
-                  <a href={member.socials.github} className="text-gray-600 dark:text-brown-300 hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Github size={18} /></a>
+                <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/70 dark:bg-brown-950/40 backdrop-blur-md flex justify-center gap-6 z-30 border-t border-gray-200 dark:border-white/10">
+                  <a href={member.socials.linkedin} className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Linkedin size={18} /></a>
+                  <a href={member.socials.github} className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Github size={18} /></a>
                 </div>
               </div>
               
               <div className="relative z-10">
-                <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2 group-hover:text-gold transition-colors tracking-tight">{member.name}</h3>
-                <p className="text-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-80">{member.role}</p>
-                <p className="text-gray-600 dark:text-brown-300 leading-relaxed italic text-sm border-l-2 border-gold/20 pl-4 py-1">
+                <h3 className="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2 group-hover:text-yellow-500 dark:group-hover:text-gold transition-colors tracking-tight">{member.name}</h3>
+                <p className="text-yellow-500 dark:text-gold text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-100">{member.role}</p>
+                <p className="text-gray-600 dark:text-brown-300 leading-relaxed italic text-sm border-l-2 border-yellow-400/20 dark:border-gold/20 pl-4 py-1">
                    {member.description}
                 </p>
               </div>
 
               {/* Decorative Glow */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-gold/5 blur-[80px] group-hover:bg-gold/10 transition-all duration-500"></div>
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-400/5 blur-[80px] group-hover:bg-yellow-400/10 transition-all duration-500"></div>
             </motion.div>
           ))}
         </div>
@@ -107,7 +107,7 @@ export default function Team() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-2xl w-full aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-gold/20"
+              className="relative max-w-2xl w-full aspect-square rounded-2xl overflow-hidden shadow-2xl shadow-gray-200/20 dark:shadow-none"
               onClick={(e) => e.stopPropagation()}
             >
               <img
@@ -117,7 +117,7 @@ export default function Team() {
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-gold hover:bg-gold hover:text-brown-950 transition-all duration-300"
+                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-yellow-500 hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 border border-gray-100 dark:border-white/5"
               >
                 <X className="w-6 h-6" />
               </button>

@@ -60,9 +60,9 @@ export default function Pricing() {
             className="flex items-center justify-center gap-3 mb-4"
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold text-gray-900 dark:text-white">
-              Invest in your <span className="text-gold italic">Growth</span>
+              Invest in your <span className="text-yellow-500 dark:text-gold italic">Growth</span>
             </h2>
-            <TrendingUp className="text-gold w-8 h-8 md:w-10 md:h-10" />
+            <TrendingUp className="text-yellow-500 dark:text-gold w-8 h-8 md:w-10 md:h-10" />
           </motion.div>
         </div>
 
@@ -75,17 +75,17 @@ export default function Pricing() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
               className={`relative glass p-8 flex flex-col h-full group ${
-                plan.popular ? 'border-gold shadow-2xl shadow-gold/10 z-10 scale-105' : 'hover:border-gold/30'
+                plan.popular ? 'border-yellow-400 dark:border-gold shadow-2xl shadow-yellow-400/10 dark:shadow-gold/10 z-10 scale-105' : 'hover:border-yellow-400/30 dark:hover:border-gold/30'
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-brown-950 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest flex items-center gap-1">
-                  MOST POPULAR <Star className="w-3 h-3 fill-brown-950" />
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-400 dark:bg-gold text-gray-900 dark:text-gold-950 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest flex items-center gap-1">
+                  MOST POPULAR <Star className="w-3 h-3 fill-gray-900 dark:fill-gold-950" />
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-gray-500 dark:text-brown-300 font-bold tracking-[0.2em] mb-6">{plan.title}</h3>
+                <h3 className="text-gray-600 dark:text-brown-300 font-bold tracking-[0.2em] mb-6">{plan.title}</h3>
                 <div className="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-2">
                   {plan.price}
                 </div>
@@ -94,8 +94,8 @@ export default function Pricing() {
               <div className="space-y-4 mb-12 flex-grow">
                 {plan.features.map((feature, fIndex) => (
                   <div key={fIndex} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-gold" />
+                    <div className="w-5 h-5 rounded-full bg-yellow-400/10 dark:bg-gold/10 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-yellow-500 dark:text-gold" />
                     </div>
                     <span className="text-gray-600 dark:text-brown-200 text-sm leading-relaxed">{feature}</span>
                   </div>
@@ -108,8 +108,8 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-xl text-center font-bold tracking-widest text-sm transition-all duration-300 ${
                   plan.popular
-                    ? 'bg-gold text-brown-950 hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-brown-950 shadow-xl shadow-gold/20'
-                    : 'bg-transparent border border-gold/50 text-gold hover:bg-gold hover:text-brown-950'
+                    ? 'bg-yellow-400 text-gray-900 hover:bg-yellow-500 dark:hover:bg-white hover:text-gray-900 dark:hover:text-brown-950 shadow-xl shadow-yellow-400/20'
+                    : 'bg-transparent border border-yellow-400/50 dark:border-gold/50 text-yellow-500 dark:text-gold hover:bg-yellow-400 hover:text-gray-900'
                 }`}
               >
                 {plan.buttonText}
@@ -121,8 +121,8 @@ export default function Pricing() {
 
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/5 blur-[120px] rounded-full"></div>
+        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-yellow-400/5 dark:bg-gold/5 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-yellow-400/5 dark:bg-gold/5 blur-[120px] rounded-full"></div>
       </div>
     </section>
   )

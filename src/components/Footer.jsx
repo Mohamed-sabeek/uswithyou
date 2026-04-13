@@ -28,11 +28,11 @@ export default function Footer() {
           
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6 group" onClick={() => window.scrollTo(0, 0)}>
-              <div className="w-8 h-8 bg-gold rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300 shadow-lg shadow-gold/20">
-                <span className="text-brown-950 font-display font-bold text-lg">U</span>
+              <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-300 shadow-lg shadow-yellow-400/20">
+                <span className="text-gray-900 font-display font-bold text-lg">U</span>
               </div>
               <span className="text-xl font-display font-bold tracking-tight text-gray-900 dark:text-white">
-                Us<span className="text-gold">With</span>You
+                Us<span className="text-yellow-500 dark:text-gold">With</span>You
               </span>
             </Link>
             <p className="text-gray-600 dark:text-brown-300 leading-relaxed mb-8">
@@ -43,7 +43,7 @@ export default function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="w-10 h-10 glass shadow-sm flex items-center justify-center text-gray-600 dark:text-brown-300 hover:text-gold hover:border-gold transition-all duration-300"
+                  className="w-10 h-10 glass shadow-sm flex items-center justify-center text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold hover:border-yellow-400 dark:hover:border-gold transition-all duration-300"
                 >
                   <link.icon className="w-5 h-5" />
                 </a>
@@ -73,7 +73,7 @@ export default function Footer() {
                 <Link
                   key={link.name}
                   to={link.href.startsWith('/') ? link.href : `/${link.href}`}
-                  className="text-gray-600 dark:text-brown-300 hover:text-gold transition-colors text-sm font-medium tracking-wide"
+                  className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors text-sm font-medium tracking-wide"
                 >
                   {link.name}
                 </Link>
@@ -84,24 +84,24 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <h4 className="text-lg font-display font-bold text-gray-900 dark:text-white mb-6">Contact Us</h4>
             <div className="flex flex-col gap-4">
-              <a href="mailto:uswithyou.team@gmail.com" className="flex items-center gap-3 text-gray-600 dark:text-brown-300 hover:text-gold transition-colors group">
-                <Mail className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+              <a href="mailto:uswithyou.team@gmail.com" className="flex items-center gap-3 text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors group">
+                <Mail className="w-5 h-5 text-yellow-500 dark:text-gold group-hover:scale-110 transition-transform" />
                 <span className="text-sm font-medium">uswithyou.team@gmail.com</span>
               </a>
               <div className="mt-4 p-4 glass-dark shadow-sm">
-                <p className="text-xs text-gray-500 dark:text-brown-300 italic">"Working with us means working for success."</p>
+                <p className="text-xs text-gray-600 dark:text-brown-300 italic">"Working with us means working for success."</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center border-t border-gray-100 dark:border-white/5">
-          <p className="text-gray-500 dark:text-brown-300 text-sm">
-            © 2026 <span className="text-gold font-bold">UsWithYou</span>. All Rights Reserved.
+          <p className="text-gray-600 dark:text-brown-300 text-sm">
+            © 2026 <span className="text-yellow-500 dark:text-gold font-bold">UsWithYou</span>. All Rights Reserved.
           </p>
           <div className="flex gap-8">
-            <Link to="/privacy-policy" className="text-gray-500 dark:text-brown-300 hover:text-gold text-xs transition-colors font-medium">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="text-gray-500 dark:text-brown-300 hover:text-gold text-xs transition-colors font-medium">Terms of Service</Link>
+            <Link to="/privacy-policy" className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold text-xs transition-colors font-medium">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold text-xs transition-colors font-medium">Terms of Service</Link>
           </div>
         </div>
       </div>

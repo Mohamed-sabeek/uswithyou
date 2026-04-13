@@ -43,13 +43,13 @@ export default function Navbar() {
               initial={{ rotate: 3 }}
               className="w-10 h-10 bg-gold rounded-xl flex items-center justify-center transition-all duration-300 shadow-lg shadow-gold/20"
             >
-              <span className="text-brown-950 font-display font-bold text-xl">U</span>
+              <span className="text-gray-900 font-display font-bold text-xl">U</span>
             </motion.div>
             <div className="flex flex-col -gap-1">
               <span className="text-xl font-display font-bold tracking-tight text-gray-900 dark:text-white leading-none">
-                Us<span className="text-gold">With</span>You
+                Us<span className="text-yellow-500 dark:text-gold">With</span>You
               </span>
-              <span className="text-[10px] text-gray-500 dark:text-brown-300 font-bold tracking-[0.2em] uppercase opacity-60">Creative Studio</span>
+              <span className="text-[10px] text-gray-600 dark:text-brown-300 font-bold tracking-[0.2em] uppercase opacity-70">Creative Studio</span>
             </div>
             
             {/* Subtle Logo Glow */}
@@ -66,7 +66,7 @@ export default function Navbar() {
                   className="relative px-4 py-2 text-gray-600 dark:text-brown-300 hover:text-gray-900 dark:hover:text-white transition-colors font-medium text-sm tracking-wide group"
                 >
                   {link.name}
-                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                  <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-yellow-400 dark:bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                 </Link>
               ))}
             </div>
@@ -118,7 +118,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden absolute top-full left-0 right-0 bg-brown-950 border-b border-white/5 shadow-2xl overflow-hidden"
+              className="lg:hidden absolute top-full left-0 right-0 bg-white dark:bg-brown-950 border-b border-gray-100 dark:border-white/5 shadow-2xl overflow-hidden"
             >
               <div className="px-6 py-8 flex flex-col gap-2">
                 {navLinks.map((link, i) => (
@@ -130,7 +130,7 @@ export default function Navbar() {
                   >
                     <Link
                       to={link.href}
-                      className="flex items-center justify-between px-4 py-4 rounded-xl hover:bg-gold/5 text-lg font-display font-medium text-gray-900 dark:text-brown-100 hover:text-gold transition-all"
+                      className="flex items-center justify-between px-4 py-4 rounded-xl hover:bg-yellow-400/5 text-lg font-display font-medium text-gray-900 dark:text-brown-100 hover:text-yellow-500 dark:hover:text-gold transition-all"
                       onClick={() => setIsOpen(false)}
                     >
                       {link.name}

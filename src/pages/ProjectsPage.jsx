@@ -22,13 +22,13 @@ export default function ProjectsPage() {
         <div className="mb-16">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-gray-500 dark:text-brown-300 hover:text-gold transition-colors mb-8 group font-medium"
+            className="inline-flex items-center gap-2 text-gray-500 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors mb-8 group font-medium"
           >
             <ChevronLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             Back to Home
           </Link>
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 text-gray-900 dark:text-white">
-            Our <span className="text-gold italic">Project</span> Gallery.
+            Our <span className="text-yellow-500 dark:text-gold italic">Project</span> Gallery.
           </h1>
           <p className="text-gray-600 dark:text-brown-300 text-xl max-w-2xl leading-relaxed italic">
             A comprehensive collection of digital experiences, structural tools, and creative solutions built with passion and precision.
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
         {/* Filters */}
         {categories.length > 2 && (
           <div className="mb-12 flex flex-wrap gap-4 items-center">
-            <div className="flex items-center gap-3 text-gold mr-4">
+            <div className="flex items-center gap-3 text-yellow-500 dark:text-gold mr-4">
               <Filter className="w-4 h-4" />
               <span className="text-xs font-bold uppercase tracking-widest">Filter By:</span>
             </div>
@@ -48,8 +48,8 @@ export default function ProjectsPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full text-sm font-bold transition-all duration-300 border ${
                   activeCategory === category 
-                  ? 'bg-gold text-brown-950 border-gold shadow-lg shadow-gold/20 scale-105' 
-                  : 'bg-gray-100 dark:bg-transparent text-gray-600 dark:text-brown-300 border-gray-200 dark:border-white/10 hover:border-gold/50'
+                  ? 'bg-yellow-400 text-gray-900 border-yellow-400 shadow-lg shadow-yellow-400/20 scale-105' 
+                  : 'bg-gray-100 dark:bg-transparent text-gray-600 dark:text-brown-300 border-gray-200 dark:border-white/10 hover:border-yellow-400/50 dark:hover:border-gold/50'
                 }`}
               >
                 {category}
@@ -97,7 +97,7 @@ export default function ProjectsPage() {
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-gold hover:bg-gold hover:text-brown-950 transition-all duration-300"
+                className="absolute top-6 right-6 w-12 h-12 glass shadow-lg flex items-center justify-center text-yellow-500 hover:bg-yellow-400 hover:text-gray-900 transition-all duration-300 border border-gray-100 dark:border-white/5"
               >
                 <X className="w-6 h-6" />
               </button>
