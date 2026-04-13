@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, Github, X, ChevronLeft, Filter } from 'lucide-react'
+import { X, ChevronLeft, Filter } from 'lucide-react'
 import { PROJECTS_DATA } from '../data/projects'
 import { Link } from 'react-router-dom'
+import ProjectCard from '../components/ProjectCard'
 
 const categories = ['All', ...new Set(PROJECTS_DATA.map(p => p.category))]
 
@@ -57,69 +58,16 @@ export default function ProjectsPage() {
           </div>
         )}
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Single Column Layout (to fit side-by-side cards) */}
+        <div className="flex flex-col gap-24 max-w-6xl mx-auto">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
-              <motion.div
-                layout
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="group relative glass overflow-hidden flex flex-col h-full border border-white/5 hover:border-gold/30 transition-all duration-500"
-              >
-                <div className="relative aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-brown-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
-                    <button
-                      onClick={() => setSelectedImage(project.image)}
-                      className="px-6 py-2 glass-dark rounded-full text-white font-bold tracking-[0.2em] text-[10px] hover:bg-gold hover:text-brown-950 transition-all duration-300 uppercase"
-                    >
-                      View Image
-                    </button>
-                  </div>
-                </div>
-
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase bg-gold/5 px-3 py-1 rounded-full border border-gold/20">
-                      {project.category}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-white mb-3 group-hover:text-gold transition-colors tracking-tight">
-                    {project.title}
-                  </h3>
-                  <p className="text-brown-300 text-sm leading-relaxed mb-6 flex-grow italic opacity-80">
-                    {project.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] font-bold text-brown-400 bg-white/5 px-2 py-1 rounded">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-gold hover:text-white transition-colors flex items-center gap-2 text-sm font-bold uppercase tracking-widest group/link"
-                    >
-                      Live Demo
-                      <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
+              <ProjectCard 
+                key={project.id} 
+                project={project} 
+                onViewImage={setSelectedImage} 
+                index={index} 
+              />
             ))}
           </AnimatePresence>
         </div>

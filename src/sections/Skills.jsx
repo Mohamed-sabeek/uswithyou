@@ -1,37 +1,50 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Code, Database, Layout, Brain, Server, Globe } from 'lucide-react'
+import { Code2, Database, Layout, Brain, Server, Zap, Globe } from 'lucide-react'
 
 const skillCategories = [
   {
     title: 'Frontend Mastery',
     Icon: Layout,
-    skills: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
+    highlight: true,
+    skills: [
+      'HTML5', 'CSS3', 'JavaScript (ES6+)', 'TypeScript', 
+      'React', 'Next.js', 'Vite', 'Tailwind CSS', 
+      'Responsive Design', 'REST API Integration', 
+      'Form Handling', 'State Management'
+    ],
   },
   {
-    title: 'Backend Prowess',
-    Icon: Database,
-    skills: ['Node.js', 'Express', 'PostgreSQL', 'MongoDB', 'Redis'],
-  },
-  {
-    title: 'Cloud & DevOps',
+    title: 'Backend Architecture',
     Icon: Server,
-    skills: ['AWS', 'Vercel', 'Docker', 'CI/CD', 'Nginx'],
+    skills: [
+      'Node.js', 'Express.js', 'REST API Development', 
+      'Authentication (JWT)', 'Middleware', 'MVC Architecture', 
+      'File Upload Handling', 'API Error Handling'
+    ],
   },
   {
-    title: 'AI Solutions',
-    Icon: Brain,
-    skills: ['OpenAI API', 'Vector DBs', 'Python', 'LangChain', 'LLM Integration'],
+    title: 'Database & Models',
+    Icon: Database,
+    skills: ['MongoDB', 'Mongoose', 'PostgreSQL', 'Database Design', 'CRUD Operations'],
   },
   {
-    title: 'Full Stack Apps',
-    Icon: Code,
-    skills: ['GraphQL', 'TRPC', 'Prisma', 'Auth.js', 'Socket.io'],
-  },
-  {
-    title: 'Web Expertise',
+    title: 'Cloud & Deployment',
     Icon: Globe,
-    skills: ['SEO Optimization', 'Web Performance', 'Edge Runtime', 'PWA', 'Accessibility'],
+    skills: [
+      'Vercel', 'Render', 'Netlify', 'AWS (Basics)', 
+      'CI/CD Basics', 'Env Variables', 'Domain & Hosting'
+    ],
+  },
+  {
+    title: 'AI & Modern Era',
+    Icon: Brain,
+    skills: ['OpenAI API', 'Prompt Engineering', 'LLM Integration', 'Chatbot Development'],
+  },
+  {
+    title: 'Performance & UX',
+    Icon: Zap,
+    skills: ['SEO Basics', 'Web Performance', 'Lazy Loading', 'Accessibility', 'PWA Basics'],
   },
 ]
 
@@ -52,11 +65,28 @@ const itemVariants = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 relative">
+    <section id="skills" className="py-32 relative overflow-hidden">
+      {/* Background Decorative Element */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/[0.02] rounded-full blur-[120px] -z-10" />
+      
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16 px-6">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Our <span className="text-gold italic">Tech Arsenal</span>.</h2>
-          <p className="text-brown-300 max-w-xl mx-auto">We leverage cutting-edge technologies to build scalable and high-performance digital solutions.</p>
+        <div className="text-center mb-20">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-6"
+          >
+            <span className="w-1.5 h-1.5 bg-gold rounded-full" />
+            <span className="text-[10px] font-bold tracking-[0.2em] text-gold uppercase">Tech Arsenal</span>
+          </motion.div>
+          
+          <h2 className="text-5xl md:text-6xl font-display font-bold mb-6 text-white leading-tight">
+            Our <span className="text-gold italic">Digital Architecture</span>.
+          </h2>
+          <p className="text-brown-300 max-w-2xl mx-auto text-lg italic leading-relaxed">
+            A comprehensive suite of technologies designed to build, scale, and optimize modern web experiences.
+          </p>
         </div>
 
         <motion.div
@@ -64,28 +94,44 @@ export default function Skills() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="glass p-8 hover:border-gold/30 hover:bg-gold/5 transition-all duration-300 group"
+              className={`group relative glass p-8 lg:p-10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/5 ${
+                category.highlight ? 'border-gold/30 bg-gold/[0.03]' : ''
+              }`}
             >
-              <div className="w-12 h-12 glass mb-6 flex items-center justify-center text-gold group-hover:scale-110 transition-transform">
-                <category.Icon className="w-6 h-6" />
+              <div className="flex items-start justify-between mb-8">
+                <div className={`w-14 h-14 glass flex items-center justify-center text-gold group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500 shadow-xl shadow-gold/5 border border-white/5`}>
+                  <category.Icon className="w-7 h-7" />
+                </div>
+                {category.highlight && (
+                  <span className="text-[10px] font-bold tracking-widest text-gold bg-gold/10 px-3 py-1 rounded-full border border-gold/20 uppercase">
+                    Core Power
+                  </span>
+                )}
               </div>
-              <h3 className="text-xl font-display font-bold mb-4 text-white group-hover:text-gold transition-colors">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+
+              <h3 className="text-2xl font-display font-bold mb-6 text-white group-hover:text-gold transition-colors">
+                {category.title}
+              </h3>
+
+              <div className="flex flex-wrap gap-2.5">
                 {category.skills.map((skill, sIndex) => (
                   <span
                     key={sIndex}
-                    className="px-3 py-1 bg-brown-950/50 border border-white/5 rounded-full text-xs text-brown-300 group-hover:border-gold/20 transition-colors"
+                    className="text-[11px] px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-brown-300 font-medium tracking-tight group-hover:border-gold/30 group-hover:text-gold transition-all duration-300"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
+
+              {/* Decorative Card Accent */}
+              <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold group-hover:w-full transition-all duration-700" />
             </motion.div>
           ))}
         </motion.div>

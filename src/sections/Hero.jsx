@@ -1,8 +1,10 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ChevronRight, Play } from 'lucide-react'
 
 export default function Hero() {
+  const navigate = useNavigate()
+
   return (
     <section id="home" className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Background Effects */}
@@ -57,7 +59,7 @@ export default function Hero() {
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
-              onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => navigate('/process')}
               className="btn-secondary flex items-center gap-2 group w-full sm:w-auto justify-center py-4"
             >
               <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center group-hover:bg-gold transition-colors">

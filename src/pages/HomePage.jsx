@@ -6,7 +6,6 @@ import Services from '../sections/Services'
 import Process from '../sections/Process'
 import Pricing from '../sections/Pricing'
 import Projects from '../sections/Projects'
-import Testimonials from '../sections/Testimonials'
 import Team from '../sections/Team'
 import Contact from '../sections/Contact'
 
@@ -15,12 +14,10 @@ export default function HomePage() {
     <>
       <Hero />
       <About />
+      <Projects />
       <Skills />
       <Services />
-      <Process />
       <Pricing />
-      <Projects />
-      <Testimonials />
       <Team />
       <Contact />
     </>

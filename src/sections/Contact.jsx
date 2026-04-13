@@ -28,7 +28,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden px-6">
+    <section id="contact" className="py-24 relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 blur-[120px] rounded-full -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="container mx-auto px-6">
@@ -38,7 +38,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="px-6"
+            className="w-full"
           >
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
               Let's build <br />
@@ -75,7 +75,10 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-white font-bold mb-1">Office</h4>
-                  <p className="text-brown-300">Remote / Global</p>
+                  <p className="text-brown-300">
+                    Based in Coimbatore, India <br />
+                    Operating Globally
+                  </p>
                 </div>
               </div>
             </div>
@@ -116,7 +119,7 @@ export default function Contact() {
                       type="text"
                       name="user_name"
                       className="w-full bg-brown-950 border border-white/5 rounded-xl px-4 py-4 text-brown-100 focus:border-gold focus:outline-none transition-colors"
-                      placeholder="Jane Doe"
+                      placeholder="UsWithYou"
                     />
                   </div>
                   <div>
@@ -126,7 +129,7 @@ export default function Contact() {
                       type="email"
                       name="user_email"
                       className="w-full bg-brown-950 border border-white/5 rounded-xl px-4 py-4 text-brown-100 focus:border-gold focus:outline-none transition-colors"
-                      placeholder="jane@example.com"
+                      placeholder="uswithyou@example.com"
                     />
                   </div>
                 </div>

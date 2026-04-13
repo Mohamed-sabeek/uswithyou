@@ -1,30 +1,30 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Linkedin, Github, X } from 'lucide-react'
-import member1 from '../assets/member1.jpeg'
-import member2 from '../assets/member2.jpeg'
-import member3 from '../assets/member3.jpeg'
+import asif from '../assets/asif.webp'
+import sabeek from '../assets/sabeek.webp'
+import deva from '../assets/deva.webp'
 
 const TEAM_DATA = [
   {
-    name: 'Mohamed Asif I',
-    role: 'Full Stack Developer',
-    description: 'Specialized in building scalable web applications using modern technologies like React, Node.js, and MongoDB.',
-    image: member1,
-    socials: { linkedin: 'https://www.linkedin.com/in/mohamed-asif-i-a7b401311/', github: 'https://github.com/MOHAMEDASIF2007' },
-  },
-  {
     name: 'Mohamed Sabeek H',
-    role: 'Frontend Developer / UI Designer',
-    description: 'Focused on creating clean, responsive, and user-friendly interfaces with modern UI/UX principles.',
-    image: member2,
+    role: 'Team Lead | Full Stack Developer & UI/UX Designer',
+    description: 'Leads the technical vision and develops complete end-to-end web applications, handling frontend, backend, and designing clean, responsive interfaces.',
+    image: sabeek,
     socials: { linkedin: 'https://www.linkedin.com/in/mohamed-sabeek-1a272a327/', github: 'https://github.com/Mohamed-sabeek' },
   },
   {
+    name: 'Mohamed Asif I',
+    role: 'Business Development & Client Manager',
+    description: 'Handles client acquisition, communication, and requirement analysis. Ensures smooth coordination between clients and the development team.',
+    image: asif,
+    socials: { linkedin: 'https://www.linkedin.com/in/mohamed-asif-i-a7b401311/', github: 'https://github.com/MOHAMEDASIF2007' },
+  },
+  {
     name: 'Deva S',
-    role: 'Backend Developer / AI Engineer',
-    description: 'Experienced in backend systems, APIs, and AI-based solutions to deliver powerful and efficient applications.',
-    image: member3,
+    role: 'Game Developer & Software Engineer',
+    description: 'Works on game development and interactive features while supporting application development with creative and technical solutions.',
+    image: deva,
     socials: { linkedin: 'https://www.linkedin.com/in/deva-s-1657a5343', github: 'https://github.com/s-deva20' },
   },
 ]

@@ -1,5 +1,4 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import { Instagram, Linkedin, Github, Mail } from 'lucide-react'
 
 const socialLinks = [
@@ -20,7 +19,7 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brown-950 pt-24 pb-12 overflow-hidden">
+    <footer className="bg-brown-950 pt-24 pb-12 overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-4 gap-12 mb-16 px-6 py-12 glass shadow-xl shadow-gold/5 relative overflow-hidden">
           {/* Radial Glow Overlay */}
@@ -57,7 +56,7 @@ export default function Footer() {
               {navLinks.slice(0, 4).map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={`/${link.href}`}
                   className="text-brown-300 hover:text-gold transition-colors text-sm font-medium tracking-wide"
                 >
                   {link.name}
@@ -72,7 +71,7 @@ export default function Footer() {
               {navLinks.slice(4).map((link) => (
                 <a
                   key={link.name}
-                  href={link.href}
+                  href={`/${link.href}`}
                   className="text-brown-300 hover:text-gold transition-colors text-sm font-medium tracking-wide"
                 >
                   {link.name}
@@ -95,13 +94,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+        <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
           <p className="text-brown-300 text-sm">
             © 2026 <span className="text-gold font-bold">UsWithYou</span>. All Rights Reserved.
           </p>
           <div className="flex gap-8">
-            <a href="#" className="text-brown-300 hover:text-gold text-xs transition-colors">Privacy Policy</a>
-            <a href="#" className="text-brown-300 hover:text-gold text-xs transition-colors">Terms of Service</a>
+            <Link to="/privacy-policy" className="text-brown-300 hover:text-gold text-xs transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-brown-300 hover:text-gold text-xs transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

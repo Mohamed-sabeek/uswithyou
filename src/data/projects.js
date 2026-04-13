@@ -1,4 +1,5 @@
 import haarisCakesImg from '../assets/haaris-cakes.webp'
+import logo from '../assets/logo.webp'
 
 export const PROJECTS_DATA = [
   {
@@ -11,5 +12,12 @@ export const PROJECTS_DATA = [
     liveUrl: 'https://haariscakes.in',
     githubUrl: '#',
     featured: true,
+    testimonial: {
+      content: 'Mohamed built our cake business website professionally and on time. Very satisfied with the result!',
+      author: 'Riswana Assan',
+      role: 'Business Owner',
+      rating: 5,
+      avatar: logo
+    }
   },
 ]
