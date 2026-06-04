@@ -5,7 +5,9 @@ import { PROJECTS_DATA } from '../data/projects'
 import { Link } from 'react-router-dom'
 import ProjectCard from '../components/ProjectCard'
 
-const categories = ['All', ...new Set(PROJECTS_DATA.map(p => p.category))]
+const categories = ['All', ...new Set(PROJECTS_DATA.flatMap(p => 
+  Array.isArray(p.category) ? p.category : [p.category]
+))]
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState('All')
@@ -13,7 +15,11 @@ export default function ProjectsPage() {
 
   const filteredProjects = activeCategory === 'All' 
     ? PROJECTS_DATA 
-    : PROJECTS_DATA.filter(p => p.category === activeCategory)
+    : PROJECTS_DATA.filter(p => 
+        Array.isArray(p.category) 
+          ? p.category.includes(activeCategory) 
+          : p.category === activeCategory
+      )
 
   return (
     <div className="pt-32 pb-24 px-6 min-h-screen bg-white dark:bg-brown-950 transition-colors duration-300">

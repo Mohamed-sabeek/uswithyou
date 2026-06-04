@@ -26,7 +26,8 @@ We focus on building scalable, user-friendly, and high-performance web applicati
 ## 👨‍💻 Team
 
 * **Mohamed Sabeek H** — Full Stack Developer & UI/UX Designer
-* **Mohamed Asif I** — Business Development & Client Manager
+* **Mohamed Asif I** — Full Stack Developer & Cloud Engineer
+* **Sasivarnan R S** — Full Stack Developer & Client Manager
 * **Deva S** — Game Developer & Software Engineer
 
 ---

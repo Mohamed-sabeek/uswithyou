@@ -21,9 +21,13 @@ dist-ssr/
 !.vscode/extensions.json
 .idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 .antigravity/
+.eslintcache
+yarn-error.log
+vite.config.*.timestamp-*

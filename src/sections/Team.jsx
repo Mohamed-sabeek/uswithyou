@@ -4,6 +4,7 @@ import { Linkedin, Github, X } from 'lucide-react'
 import asif from '../assets/asif.webp'
 import sabeek from '../assets/sabeek.webp'
 import deva from '../assets/deva.webp'
+import sasi from '../assets/sasi.webp'
 
 const TEAM_DATA = [
   {
@@ -15,10 +16,17 @@ const TEAM_DATA = [
   },
   {
     name: 'Mohamed Asif I',
-    role: 'Business Development & Client Manager',
-    description: 'Handles client acquisition, communication, and requirement analysis. Ensures smooth coordination between clients and the development team.',
+    role: 'Full Stack Developer & Cloud Engineer',
+    description: 'Specializes in full-stack development and cloud infrastructure, building scalable backend services and managing cloud deployment workflows.',
     image: asif,
     socials: { linkedin: 'https://www.linkedin.com/in/mohamed-asif-i-a7b401311/', github: 'https://github.com/MOHAMEDASIF2007' },
+  },
+  {
+    name: 'Sasivarnan R S',
+    role: 'Full Stack Developer & Client Manager',
+    description: 'Develops robust full-stack applications and manages client relationships, ensuring technical solutions align perfectly with business needs.',
+    image: sasi,
+    socials: { linkedin: '', github: '' },
   },
   {
     name: 'Deva S',
@@ -44,7 +52,7 @@ export default function Team() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {TEAM_DATA.map((member, index) => (
             <motion.div
               key={index}
@@ -73,8 +81,8 @@ export default function Team() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 dark:from-brown-950 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/70 dark:bg-brown-950/40 backdrop-blur-md flex justify-center gap-6 z-30 border-t border-gray-200 dark:border-white/10">
-                  <a href={member.socials.linkedin} className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Linkedin size={18} /></a>
-                  <a href={member.socials.github} className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Github size={18} /></a>
+                  <a href={member.socials.linkedin || '#'} target={member.socials.linkedin ? "_blank" : undefined} rel="noopener noreferrer" className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Linkedin size={18} /></a>
+                  <a href={member.socials.github || '#'} target={member.socials.github ? "_blank" : undefined} rel="noopener noreferrer" className="text-gray-600 dark:text-brown-300 hover:text-yellow-500 dark:hover:text-gold transition-colors p-2 glass rounded-full shadow-sm"><Github size={18} /></a>
                 </div>
               </div>
               

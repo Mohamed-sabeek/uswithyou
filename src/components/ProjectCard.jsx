@@ -34,10 +34,18 @@ export default function ProjectCard({ project, onViewImage, index }) {
         </div>
 
         <div className="px-2">
-          <div className="flex justify-between items-center mb-6">
-            <span className="text-[10px] font-bold tracking-widest text-yellow-500 dark:text-gold uppercase px-3 py-1 bg-yellow-400/5 dark:bg-gold/5 border border-yellow-400/20 dark:border-gold/20 rounded-full">
-              {project.category}
-            </span>
+          <div className="flex flex-wrap gap-2 items-center mb-6">
+            {Array.isArray(project.category) ? (
+              project.category.map((cat, idx) => (
+                <span key={idx} className="text-[10px] font-bold tracking-widest text-yellow-500 dark:text-gold uppercase px-3 py-1 bg-yellow-400/5 dark:bg-gold/5 border border-yellow-400/20 dark:border-gold/20 rounded-full">
+                  {cat}
+                </span>
+              ))
+            ) : (
+              <span className="text-[10px] font-bold tracking-widest text-yellow-500 dark:text-gold uppercase px-3 py-1 bg-yellow-400/5 dark:bg-gold/5 border border-yellow-400/20 dark:border-gold/20 rounded-full">
+                {project.category}
+              </span>
+            )}
           </div>
           
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4 text-gray-900 dark:text-white group-hover:text-yellow-500 dark:group-hover:text-gold transition-colors">
