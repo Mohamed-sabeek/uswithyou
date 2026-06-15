@@ -26,7 +26,7 @@ const TEAM_DATA = [
     role: 'Full Stack Developer & Client Manager',
     description: 'Develops robust full-stack applications and manages client relationships, ensuring technical solutions align perfectly with business needs.',
     image: sasi,
-    socials: { linkedin: '', github: '' },
+    socials: { linkedin: 'https://www.linkedin.com/in/sasivarnan-r-s-230a37333', github: 'https://github.com/sasivarnanRS' },
   },
   {
     name: 'Deva S',
